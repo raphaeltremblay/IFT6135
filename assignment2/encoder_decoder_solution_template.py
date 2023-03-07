@@ -69,7 +69,8 @@ class Attn(nn.Module):
         self.hidden_size = hidden_size
 
         self.W = nn.Linear(hidden_size*2, hidden_size)
-        self.V = nn.Linear(hidden_size, hidden_size)
+        self.V = nn.Linear(hidden_size, hidden_size) # in the forwards, after multiplying
+                                                     # do a torch.sum(..., keepdim=True), its a linear operation
 
         self.tanh = nn.Tanh()
         self.softmax = nn.Softmax(dim=1)
