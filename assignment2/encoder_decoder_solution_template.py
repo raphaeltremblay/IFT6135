@@ -133,7 +133,7 @@ class Encoder(nn.Module):
         This is a Bidirectional Gated Recurrent Unit Encoder network
         Parameters
         ----------
-        inputs (`torch.FloatTensor` of shape `(batch_size, sequence_length, vocabulary_size)`)
+        inputs (`torch.FloatTensor` of shape `(batch_size, sequence_length)`)
             The input tensor containing the token sequences.
 
         hidden_states(`torch.FloatTensor` of shape `(num_layers*2, batch_size, hidden_size)`)
